@@ -12,9 +12,26 @@ namespace CoreySutton.Utilities
             if (value == null) throw new ArgumentNullException(name);
         }
 
+        public static void NotNullOrEmpty(string value, string name = DefaultArgumentName)
+        {
+            if (string.IsNullOrEmpty(value)) throw new ArgumentNullException(name);
+        }
+
         public static void NotNullOrEmpty(ICollection value, string name = DefaultArgumentName)
         {
             if (value == null || value.Count <= 0) throw new ArgumentNullException(name);
+        }
+
+        public static void NotNullOrEmpty(IDictionary value, string name = DefaultArgumentName)
+        {
+            if (value == null || value.Count <= 0) throw new ArgumentNullException(name);
+        }
+
+        public static void NotNullOrEmpty(IEnumerable value, string name = DefaultArgumentName)
+        {
+            ICollection collection = value as ICollection;
+
+            if (collection == null || collection.Count <= 0) throw new ArgumentNullException(name);
         }
 
         public static void GreaterThanZero(double value, string name = DefaultArgumentName)
