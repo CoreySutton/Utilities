@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utilities\ArgUtil.cs" />
-    <Compile Include="Utilities\CommonUtil.cs" />
     <Compile Include="Utilities\ConsoleIoUtil.cs" />
     <Compile Include="Utilities\DateTimeUtil.cs" />
     <Compile Include="Extensions\CommonExtensions.cs" />
