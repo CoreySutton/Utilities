@@ -57,6 +57,7 @@
     <None Include="NuGet Packages\CoreySutton.Utilities.0.0.2.nupkg" />
     <None Include="NuGet Packages\CoreySutton.Utilities.0.1.0-alpha.nupkg" />
     <None Include="NuGet Packages\CoreySutton.Utilities.0.1.0.nupkg" />
+    <None Include="NuGet Packages\CoreySutton.Utilities.0.1.1.nupkg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
