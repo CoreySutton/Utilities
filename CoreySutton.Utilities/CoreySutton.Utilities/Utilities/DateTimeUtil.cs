@@ -118,7 +118,5 @@ namespace CoreySutton.Utilities
                     return DateTime.Today.AddDays(-1 * ((int)dayOfWeek - 1));
             }
         }
-
-
     }
 }
