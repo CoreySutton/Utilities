@@ -3,7 +3,7 @@ using System.Security;
 
 namespace CoreySutton.Utilities
 {
-    public static class ConsoleIoUtil
+    public static class ConsoleIo
     {
         public static bool GetYesNo(string promptMsg, string emptyInputErrMsg, string notYesNoErrMsg)
         {

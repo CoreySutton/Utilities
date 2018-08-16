@@ -39,7 +39,7 @@ namespace CoreySutton.Utilities
             string cypherText = _settings[settingName] as string;
             string entropy = _settings[entropyName] as string;
 
-            return EncryptionUtil.Decrypt(cypherText, entropy);
+            return Encryption.Decrypt(cypherText, entropy);
         }
 
         public void Update<TSetting>(string settingName, TSetting settingValue)
@@ -61,7 +61,7 @@ namespace CoreySutton.Utilities
             string settingEntropyName, 
             string plainTextValue)
         {
-            (string cypherText, string entropy) = EncryptionUtil.Encrypt(plainTextValue);
+            (string cypherText, string entropy) = Encryption.Encrypt(plainTextValue);
 
             _settings[settingName]= cypherText;
             _settings[settingEntropyName] = entropy;

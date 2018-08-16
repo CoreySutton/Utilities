@@ -27,7 +27,7 @@ namespace CoreySutton.Utilities
             string emptyErrMsg = Resources.Errors.Error_InvalidUseSavedCredentials_Empty;
             string notYesNoErrMsg = Resources.Errors.Error_InvalidUseSavedCredentials_NotYesNo;
 
-            return ConsoleIoUtil.GetYesNo(promptMsg, emptyErrMsg, notYesNoErrMsg);
+            return ConsoleIo.GetYesNo(promptMsg, emptyErrMsg, notYesNoErrMsg);
         }
 
         public string GetUsername()
@@ -61,7 +61,7 @@ namespace CoreySutton.Utilities
         {
             string promptMsg = Resources.Prompts.Prompt_Password;
 
-            return ConsoleIoUtil.GetSecureString(promptMsg);
+            return ConsoleIo.GetSecureString(promptMsg);
         }
 
         public bool GetShouldSaveCredentials()
@@ -70,7 +70,7 @@ namespace CoreySutton.Utilities
             string emptyErrMsg = Resources.Errors.Error_InvalidShouldSaveCredentials_Empty;
             string notYesNoErrMsg = Resources.Errors.Error_InvalidShouldSaveCredentials_NotYesNo;
 
-            return ConsoleIoUtil.GetYesNo(promptMsg, emptyErrMsg, notYesNoErrMsg);
+            return ConsoleIo.GetYesNo(promptMsg, emptyErrMsg, notYesNoErrMsg);
         }
 
         public virtual void Save()

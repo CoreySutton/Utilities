@@ -14,7 +14,7 @@ namespace CoreySutton.Utilities.UnitTests
             object obj = null;
 
             // act  
-            ArgumentNullException exception = Assert.ThrowsException<ArgumentNullException>(() => ArgUtil.NotNull(obj, nameof(obj)));
+            ArgumentNullException exception = Assert.ThrowsException<ArgumentNullException>(() => Argument.IsNotNull(obj, nameof(obj)));
 
             // assert  
             Assert.AreEqual(
@@ -30,12 +30,12 @@ namespace CoreySutton.Utilities.UnitTests
             object obj = null;
 
             // act  
-            ArgumentNullException exception = Assert.ThrowsException<ArgumentNullException>(() => ArgUtil.NotNull(obj));
+            ArgumentNullException exception = Assert.ThrowsException<ArgumentNullException>(() => Argument.IsNotNull(obj));
 
             // assert  
             Assert.AreEqual(
                 exception.Message,
-                GetArgumentNullExceptionMessage(ArgUtil.DefaultArgumentName),
+                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
                 "Incorrect exception message");
         }
 
@@ -46,7 +46,7 @@ namespace CoreySutton.Utilities.UnitTests
             object obj = new object();
 
             // act
-            ArgUtil.NotNull(obj);
+            Argument.IsNotNull(obj);
         }
 
         private string GetArgumentNullExceptionMessage(string argumentName)

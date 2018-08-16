@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CoreySutton.Utilities
 {
-    public static class EncryptionUtil
+    public static class Encryption
     {
         public static (string encryptedValue, string entropy) Encrypt(string value)
         {
@@ -21,16 +21,16 @@ namespace CoreySutton.Utilities
             byte[] ciphertext = ProtectedData.Protect(plaintext, entropy,
                 DataProtectionScope.CurrentUser);
 
-            string cipherTextString = Convert.ToBase64String(ciphertext);
-            string entropyString = Convert.ToBase64String(entropy);
+            string cipherTextString = System.Convert.ToBase64String(ciphertext);
+            string entropyString = System.Convert.ToBase64String(entropy);
 
             return (cipherTextString, entropyString);
         }
 
         public static string Decrypt(string cipherText, string entropy)
         {
-            byte[] cipherTextBytes = Convert.FromBase64String(cipherText);
-            byte[] entropyBytes = Convert.FromBase64String(entropy);
+            byte[] cipherTextBytes = System.Convert.FromBase64String(cipherText);
+            byte[] entropyBytes = System.Convert.FromBase64String(entropy);
 
             byte[] plainText = ProtectedData.Unprotect(cipherTextBytes, entropyBytes, DataProtectionScope.CurrentUser);
 

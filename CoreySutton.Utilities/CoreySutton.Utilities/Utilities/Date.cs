@@ -3,34 +3,22 @@ using System.Text.RegularExpressions;
 
 namespace CoreySutton.Utilities
 {
-    public class DateTimeUtil
+    public class Date
     {
-        public static bool IsDatesWithinXYears(DateTime since, DateTime until, int years)
+        public static bool IsWithinXYears(DateTime rangeStart, DateTime rangeEnd, int years)
         {
-            ArgUtil.NotNull(since);
-            ArgUtil.NotNull(until);
-            ArgUtil.GreaterThanZero(years);
+            Argument.IsNotNull(rangeStart);
+            Argument.IsNotNull(rangeEnd);
+            Argument.IsGreaterThanZero(years);
 
-            DateTime dateLimit = since.AddYears(years);
+            DateTime dateLimit = rangeStart.AddYears(years);
 
-            return until <= dateLimit;
-        }
-
-        public static bool IsDatesWithinXYears(string since, string until, int years)
-        {
-            ArgUtil.NotNull(since);
-            ArgUtil.NotNull(until);
-            ArgUtil.GreaterThanZero(years);
-
-            DateTime sinceDt = DateTime.Parse(since);
-            DateTime untilDt = DateTime.Parse(until);
-
-            return IsDatesWithinXYears(sinceDt, untilDt, years);
+            return rangeEnd <= dateLimit;
         }
 
         public static string ValidateDate(string date)
         {
-            ArgUtil.NotNull(date);
+            Argument.IsNotNull(date);
 
             string[] dateComponents = date.Split('-', '/');
             if (dateComponents.Length == 1)
@@ -81,9 +69,9 @@ namespace CoreySutton.Utilities
             return null;
         }
 
-        public static DateTime? ParseDateString(string startDate, string startTime = null)
+        public static DateTime? Parse(string startDate, string startTime = null)
         {
-            ArgUtil.NotNull(startDate);
+            Argument.IsNotNull(startDate);
 
             DateTime start;
             if (startTime == null)
