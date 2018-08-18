@@ -89,21 +89,21 @@ namespace CoreySutton.Utilities
             throw new Exception("Failed to parse date");
         }
 
-        public static DateTime GetMondayOfThisWeek()
+        public static DateTime GetFirstDayOfThisWeek(DayOfWeek firstDayOfWeek)
         {
-            DayOfWeek dayOfWeek = DateTime.Today.DayOfWeek;
+            DateTime today = DateTime.Today;
 
-            switch (dayOfWeek)
+            // Today is first day of week
+            if (today.DayOfWeek == firstDayOfWeek)
             {
-                // Monday
-                case DayOfWeek.Monday:
-                    return DateTime.Today;
-                // Sunday
-                case DayOfWeek.Sunday:
-                    return DateTime.Today.AddDays(1);
-                // Every other day
-                default:
-                    return DateTime.Today.AddDays(-1 * ((int)dayOfWeek - 1));
+                return today;
+            }
+
+            int count = 0;
+            while (true)
+            {
+                DateTime tempDate = today.AddDays(-++count);
+                if (tempDate.DayOfWeek == firstDayOfWeek) return tempDate;
             }
         }
     }
