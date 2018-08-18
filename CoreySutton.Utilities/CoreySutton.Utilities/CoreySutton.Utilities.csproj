@@ -55,17 +55,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Date.cs" />
     <Compile Include="Utilities\Encryption.cs" />
+    <Compile Include="Utilities\ExConsole.cs" />
     <Compile Include="Utilities\Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CoreySutton.Utilities.nuspec" />
-    <None Include="NuGet Packages\CoreySutton.Utilities.0.0.1.nupkg" />
-    <None Include="NuGet Packages\CoreySutton.Utilities.0.0.2.nupkg" />
-    <None Include="NuGet Packages\CoreySutton.Utilities.0.1.0-alpha.nupkg" />
-    <None Include="NuGet Packages\CoreySutton.Utilities.0.1.0.nupkg" />
-    <None Include="NuGet Packages\CoreySutton.Utilities.0.1.1.nupkg" />
-    <None Include="NuGet Packages\CoreySutton.Utilities.0.1.2.1.nupkg" />
-    <None Include="NuGet Packages\CoreySutton.Utilities.0.1.2.nupkg" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
