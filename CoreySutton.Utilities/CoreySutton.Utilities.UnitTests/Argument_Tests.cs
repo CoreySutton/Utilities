@@ -4,8 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CoreySutton.Utilities.UnitTests
 {
     [TestClass]
-    // ReSharper disable once InconsistentNaming
-    public class ArgUtil_Tests
+    public class Argument_Tests
     {
         [TestMethod]
         public void NotNull_CustomMessage_ThrowsArgumentNullException()
