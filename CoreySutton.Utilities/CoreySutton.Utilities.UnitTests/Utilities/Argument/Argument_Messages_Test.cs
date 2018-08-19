@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CoreySutton.Utilities.UnitTests
 {
     [TestClass]
-    public class Argument_Tests
+    public class Argument_Messages_Test : Argument_TestBase
     {
         [TestMethod]
         public void NotNull_CustomMessage_ThrowsArgumentNullException()
@@ -46,11 +46,6 @@ namespace CoreySutton.Utilities.UnitTests
 
             // act
             Argument.IsNotNull(obj);
-        }
-
-        private string GetArgumentNullExceptionMessage(string argumentName)
-        {
-            return $"Value cannot be null.\r\nParameter name: {argumentName}";
         }
     }
 }
