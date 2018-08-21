@@ -6,31 +6,30 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CoreySutton.Utilities.UnitTests
 {
     [TestClass]
-    public class Argument_IsNullOrEmpty_Test : Argument_TestBase
+    public class Argument_IsNullOrEmpty
     {
         [TestMethod]
         public void IsNotNullOfEmpty_IEnumerable()
         {
             // Arrange
-            IEnumerable notEmpty = new string[] { "one", "two", "three" };
+            IEnumerable notEmpty = new[] { "one", "two", "three" };
             IEnumerable empty = new string[0];
-            IEnumerable nullEnumerable = null;
 
             // Act / Assert
             Argument.IsNotNullOrEmpty(notEmpty);
             var exceptionEmpty = Assert.ThrowsException<ArgumentNullException>(
                 () => Argument.IsNotNullOrEmpty(empty));
             var exceptionNull = Assert.ThrowsException<ArgumentNullException>(
-                () => Argument.IsNotNullOrEmpty(nullEnumerable));
+                () => Argument.IsNotNullOrEmpty((IEnumerable)null));
 
             // assert  
             Assert.AreEqual(
                 exceptionEmpty.Message,
-                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
+                new ArgumentNullException(Argument.DefaultArgumentName).Message,
                 "Incorrect exception message");
             Assert.AreEqual(
                 exceptionNull.Message,
-                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
+                new ArgumentNullException(Argument.DefaultArgumentName).Message,
                 "Incorrect exception message");
         }
 
@@ -38,25 +37,24 @@ namespace CoreySutton.Utilities.UnitTests
         public void IsNotNullOfEmpty_IEnumerableGeneric()
         {
             // Arrange
-            IEnumerable<string> notEmpty = new string[] { "one", "two", "three" };
+            IEnumerable<string> notEmpty = new[] { "one", "two", "three" };
             IEnumerable<string> empty = new string[0];
-            IEnumerable<string> nullEnumerable = null;
 
             // Act / Assert
             Argument.IsNotNullOrEmpty(notEmpty);
             var exceptionEmpty = Assert.ThrowsException<ArgumentNullException>(
                 () => Argument.IsNotNullOrEmpty(empty));
             var exceptionNull = Assert.ThrowsException<ArgumentNullException>(
-                () => Argument.IsNotNullOrEmpty(nullEnumerable));
+                () => Argument.IsNotNullOrEmpty((IEnumerable<string>)null));
 
             // assert  
             Assert.AreEqual(
                 exceptionEmpty.Message,
-                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
+                new ArgumentNullException(Argument.DefaultArgumentName).Message,
                 "Incorrect exception message");
             Assert.AreEqual(
                 exceptionNull.Message,
-                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
+                new ArgumentNullException(Argument.DefaultArgumentName).Message,
                 "Incorrect exception message");
         }
 
@@ -70,23 +68,22 @@ namespace CoreySutton.Utilities.UnitTests
             notEmpty.Add(3, "three");
 
             IDictionary empty = new Dictionary<int, string>();
-            IDictionary nullDictionary = null;
 
             // Act / Assert
             Argument.IsNotNullOrEmpty(notEmpty);
             var exceptionEmpty = Assert.ThrowsException<ArgumentNullException>(
                 () => Argument.IsNotNullOrEmpty(empty));
             var exceptionNull = Assert.ThrowsException<ArgumentNullException>(
-                () => Argument.IsNotNullOrEmpty(nullDictionary));
+                () => Argument.IsNotNullOrEmpty((IDictionary)null));
 
             // assert  
             Assert.AreEqual(
                 exceptionEmpty.Message,
-                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
+                new ArgumentNullException(Argument.DefaultArgumentName).Message,
                 "Incorrect exception message");
             Assert.AreEqual(
                 exceptionNull.Message,
-                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
+                new ArgumentNullException(Argument.DefaultArgumentName).Message,
                 "Incorrect exception message");
         }
 
@@ -94,25 +91,24 @@ namespace CoreySutton.Utilities.UnitTests
         public void IsNotNullOfEmpty_ICollection()
         {
             // Arrange
-            ICollection notEmpty = new string[] { "one", "two", "three" };
+            ICollection notEmpty = new[] { "one", "two", "three" };
             ICollection empty = new string[0];
-            ICollection nullCollection = null;
 
             // Act / Assert
             Argument.IsNotNullOrEmpty(notEmpty);
             var exceptionEmpty = Assert.ThrowsException<ArgumentNullException>(
                 () => Argument.IsNotNullOrEmpty(empty));
             var exceptionNull = Assert.ThrowsException<ArgumentNullException>(
-                () => Argument.IsNotNullOrEmpty(nullCollection));
+                () => Argument.IsNotNullOrEmpty((ICollection)null));
 
             // assert  
             Assert.AreEqual(
                 exceptionEmpty.Message,
-                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
+                new ArgumentNullException(Argument.DefaultArgumentName).Message,
                 "Incorrect exception message");
             Assert.AreEqual(
                 exceptionNull.Message,
-                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
+                new ArgumentNullException(Argument.DefaultArgumentName).Message,
                 "Incorrect exception message");
         }
 
@@ -122,23 +118,22 @@ namespace CoreySutton.Utilities.UnitTests
             // Arrange
             string notEmpty = "one";
             string empty = string.Empty;
-            string nullString = null;
 
             // Act / Assert
             Argument.IsNotNullOrEmpty(notEmpty);
             var exceptionEmpty = Assert.ThrowsException<ArgumentNullException>(
                 () => Argument.IsNotNullOrEmpty(empty));
             var exceptionNull = Assert.ThrowsException<ArgumentNullException>(
-               () => Argument.IsNotNullOrEmpty(nullString));
+               () => Argument.IsNotNullOrEmpty((string)null));
 
             // assert  
             Assert.AreEqual(
                 exceptionEmpty.Message,
-                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
+                new ArgumentNullException(Argument.DefaultArgumentName).Message,
                 "Incorrect exception message");
             Assert.AreEqual(
                 exceptionNull.Message,
-                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
+                new ArgumentNullException(Argument.DefaultArgumentName).Message,
                 "Incorrect exception message");
         }
     }

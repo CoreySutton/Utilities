@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CoreySutton.Utilities.UnitTests
 {
     [TestClass]
-    public class Argument_Messages_Test : Argument_TestBase
+    public class Argument_Messages
     {
         [TestMethod]
         public void NotNull_CustomMessage_ThrowsArgumentNullException()
@@ -18,7 +18,7 @@ namespace CoreySutton.Utilities.UnitTests
             // assert  
             Assert.AreEqual(
                 exception.Message,
-                GetArgumentNullExceptionMessage(nameof(obj)),
+                new ArgumentNullException(nameof(obj)).Message,
                 "Incorrect exception message");
         }
 
@@ -34,7 +34,7 @@ namespace CoreySutton.Utilities.UnitTests
             // assert  
             Assert.AreEqual(
                 exception.Message,
-                GetArgumentNullExceptionMessage(Argument.DefaultArgumentName),
+                new ArgumentNullException(Argument.DefaultArgumentName).Message,
                 "Incorrect exception message");
         }
 
