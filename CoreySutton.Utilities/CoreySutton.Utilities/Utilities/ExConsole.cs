@@ -73,7 +73,6 @@ namespace CoreySutton.Utilities
             Console.WriteLine($"ERROR: {ex.Message}");
             Console.WriteLine($"Site: {ex.TargetSite}");
             Console.WriteLine($"Depth: {depth}");
-            WriteColor(ex.StackTrace, ConsoleColor.DarkGray);
 
             if (ex.Data.Count > 0)
             {
