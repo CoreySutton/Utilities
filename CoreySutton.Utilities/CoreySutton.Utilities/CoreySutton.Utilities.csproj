@@ -45,8 +45,16 @@
     <Compile Include="Managers\CredentialManager.cs" />
     <Compile Include="Interfaces\ICredentialManager.cs" />
     <Compile Include="Managers\SettingManager.cs" />
-    <Compile Include="Resources\Errors.Designer.cs" />
-    <Compile Include="Resources\Prompts.Designer.cs" />
+    <Compile Include="Resources\Errors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Prompts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Prompts.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\Argument.cs" />
     <Compile Include="Utilities\ConsoleIo.cs" />
     <Compile Include="Utilities\Convert.cs" />
@@ -63,8 +71,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Errors.resx" />
-    <EmbeddedResource Include="Resources\Prompts.resx" />
+    <EmbeddedResource Include="Resources\Errors.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Prompts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Prompts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
