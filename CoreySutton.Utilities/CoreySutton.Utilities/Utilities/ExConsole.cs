@@ -1,4 +1,6 @@
-﻿using System;
+using System;
+using System.Collections;
+using System.Linq;
 
 namespace CoreySutton.Utilities
 {
@@ -9,13 +11,15 @@ namespace CoreySutton.Utilities
     {
         private static ConsoleColor _defaultColor = ConsoleColor.Gray;
 
-        public static void Write(string message)
+        public static void Write(string message, bool timestamp = false)
         {
+            if (timestamp) WriteTimestamp();
             Console.Write(message);
         }
 
-        public static void WriteLine(string message)
+        public static void WriteLine(string message, bool timestamp = false)
         {
+            if (timestamp) WriteTimestamp();
             Console.WriteLine(message);
         }
 
@@ -29,22 +33,35 @@ namespace CoreySutton.Utilities
             Console.WriteLine(value);
         }
 
-        public static void WriteColor(string value, ConsoleColor color)
+        public static void WriteColor(
+            string value, 
+            ConsoleColor color, 
+            bool timestamp = false)
         {
             if (string.IsNullOrEmpty(value)) return;
 
             Console.ForegroundColor = color;
+            if (timestamp) WriteTimestamp();
             Console.Write(value);
             Console.ForegroundColor = _defaultColor;
         }
 
-        public static void WriteLineColor(string value, ConsoleColor color)
+        public static void WriteLineColor(
+            string value, 
+            ConsoleColor color, 
+            bool timestamp = false)
         {
             if (string.IsNullOrEmpty(value)) return;
 
             Console.ForegroundColor = color;
+            if (timestamp) WriteTimestamp();
             Console.WriteLine(value);
             Console.ForegroundColor = _defaultColor;
+        }
+
+        private static void WriteTimestamp()
+        {
+            Console.Write($"{DateTime.Now:o}");
         }
     }
 }
