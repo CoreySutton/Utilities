@@ -123,16 +123,16 @@
   <data name="Error_InvalidShouldSaveCredentials_NotYesNo" xml:space="preserve">
     <value>Invalid option: input must be yes/no (Error #100-14)</value>
   </data>
-  <data name="Error_InvalidUseSavedCredentials_Empty" xml:space="preserve">
-    <value>Invalid option: input must not be empty (Error #100-15)</value>
-  </data>
-  <data name="Error_InvalidUseSavedCredentials_NotYesNo" xml:space="preserve">
-    <value>Invalid option: input must be yes/no (Error #100-16)</value>
-  </data>
   <data name="Error_InvalidUsername_Empty" xml:space="preserve">
     <value>Invalid username: input must not be empty (Error #100-1)</value>
   </data>
   <data name="Error_InvalidUsername_NoAt" xml:space="preserve">
     <value>Invalid username: username must contain '@' (Error #100-2)</value>
+  </data>
+  <data name="Error_InvalidUseSavedCredentials_Empty" xml:space="preserve">
+    <value>Invalid option: input must not be empty (Error #100-15)</value>
+  </data>
+  <data name="Error_InvalidUseSavedCredentials_NotYesNo" xml:space="preserve">
+    <value>Invalid option: input must be yes/no (Error #100-16)</value>
   </data>
 </root>

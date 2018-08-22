@@ -49,8 +49,17 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Argument_Tests.cs" />
+    <Compile Include="Utilities\Argument\Argument_IsLessThanZero.cs" />
+    <Compile Include="Utilities\Argument\Argument_IsLessThanOrEqualToZero.cs" />
+    <Compile Include="Utilities\Argument\Argument_IsGreaterThanOrEqualToZero.cs" />
+    <Compile Include="Utilities\Argument\Argument_IsGreaterThanZero.cs" />
+    <Compile Include="Utilities\Argument\Argument_IsNullOrEmpty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Argument\Argument_Messages.cs" />
+    <Compile Include="Utilities\ExConsole\ExConsole_WriteException.cs" />
+    <Compile Include="Utilities\Validator\Validator_IsNotNullAndHasOneItem.cs" />
+    <Compile Include="Utilities\Validator\Validator_HasOneItem.cs" />
+    <Compile Include="Utilities\Validator\Validator_IsNullOrEmpty.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -60,6 +69,16 @@
       <Project>{aa8bfbe5-139c-40d0-964b-caa746b872d5}</Project>
       <Name>CoreySutton.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\CommonExtensions\" />
+    <Folder Include="Extensions\DictionaryExtensions\" />
+    <Folder Include="Managers\CredentialManager\" />
+    <Folder Include="Managers\SettingManager\" />
+    <Folder Include="Utilities\ConsoleIo\" />
+    <Folder Include="Utilities\Convert\" />
+    <Folder Include="Utilities\Date\" />
+    <Folder Include="Utilities\Encryption\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
