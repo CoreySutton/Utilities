@@ -65,12 +65,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CoreySutton.Utilities\CoreySutton.Utilities.csproj">
-      <Project>{aa8bfbe5-139c-40d0-964b-caa746b872d5}</Project>
-      <Name>CoreySutton.Utilities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Extensions\CommonExtensions\" />
     <Folder Include="Extensions\DictionaryExtensions\" />
     <Folder Include="Managers\CredentialManager\" />
@@ -79,6 +73,12 @@
     <Folder Include="Utilities\Convert\" />
     <Folder Include="Utilities\Date\" />
     <Folder Include="Utilities\Encryption\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreySutton.Utilities\CoreySutton.Utilities.csproj">
+      <Project>{ee21bdd2-79bb-4793-8047-34504f8abf85}</Project>
+      <Name>CoreySutton.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

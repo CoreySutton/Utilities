@@ -14,7 +14,7 @@ namespace CoreySutton.Utilities
         public CredentialManager(ISettingManager appSettingsManager)
         {
             _appSettingsManager = appSettingsManager;
-  
+
             if (GetUseSavedCredentials())
             {
                 _useSavedCredentials = true;
@@ -23,9 +23,9 @@ namespace CoreySutton.Utilities
 
         private bool GetUseSavedCredentials()
         {
-            string promptMsg = Resources.Prompts.Prompt_UseSavedCredentials;
-            string emptyErrMsg = Resources.Errors.Error_InvalidUseSavedCredentials_Empty;
-            string notYesNoErrMsg = Resources.Errors.Error_InvalidUseSavedCredentials_NotYesNo;
+            string promptMsg = Prompts.Prompt_UseSavedCredentials;
+            string emptyErrMsg = Errors.Error_InvalidUseSavedCredentials_Empty;
+            string notYesNoErrMsg = Errors.Error_InvalidUseSavedCredentials_NotYesNo;
 
             return ConsoleIo.GetYesNo(promptMsg, emptyErrMsg, notYesNoErrMsg);
         }
@@ -40,13 +40,13 @@ namespace CoreySutton.Utilities
 
             while (true)
             {
-                Console.Write(Resources.Prompts.Prompt_Username);
+                Console.Write(Prompts.Prompt_Username);
 
                 string inputLine = Console.ReadLine();
 
                 if (string.IsNullOrEmpty(inputLine))
                 {
-                    Console.WriteLine(Resources.Errors.Error_InvalidUsername_Empty);
+                    Console.WriteLine(Errors.Error_InvalidUsername_Empty);
                 }
                 else
                 {
@@ -59,16 +59,16 @@ namespace CoreySutton.Utilities
 
         public SecureString GetPassword()
         {
-            string promptMsg = Resources.Prompts.Prompt_Password;
+            string promptMsg = Prompts.Prompt_Password;
 
             return ConsoleIo.GetSecureString(promptMsg);
         }
 
         public bool GetShouldSaveCredentials()
         {
-            string promptMsg = Resources.Prompts.Prompt_ShouldSaveCredentials;
-            string emptyErrMsg = Resources.Errors.Error_InvalidShouldSaveCredentials_Empty;
-            string notYesNoErrMsg = Resources.Errors.Error_InvalidShouldSaveCredentials_NotYesNo;
+            string promptMsg = Prompts.Prompt_ShouldSaveCredentials;
+            string emptyErrMsg = Errors.Error_InvalidShouldSaveCredentials_Empty;
+            string notYesNoErrMsg = Errors.Error_InvalidShouldSaveCredentials_NotYesNo;
 
             return ConsoleIo.GetYesNo(promptMsg, emptyErrMsg, notYesNoErrMsg);
         }

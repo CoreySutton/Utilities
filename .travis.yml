@@ -1,3 +1,0 @@
-language: csharp
-solution: CoreySutton.Utilities.sln
-before_install: cd CoreySutton.Utilities
