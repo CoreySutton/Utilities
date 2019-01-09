@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CoreySutton.Utilities.Resources {
+namespace CoreySutton.Utilities {
     using System;
     
     

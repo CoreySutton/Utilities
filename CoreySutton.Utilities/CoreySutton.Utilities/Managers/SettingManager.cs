@@ -57,13 +57,13 @@ namespace CoreySutton.Utilities
         }
 
         public void SaveAsEncrypted(
-            string settingName, 
-            string settingEntropyName, 
+            string settingName,
+            string settingEntropyName,
             string plainTextValue)
         {
             (string cypherText, string entropy) = Encryption.Encrypt(plainTextValue);
 
-            _settings[settingName]= cypherText;
+            _settings[settingName] = cypherText;
             _settings[settingEntropyName] = entropy;
 
             _settings.Save();
