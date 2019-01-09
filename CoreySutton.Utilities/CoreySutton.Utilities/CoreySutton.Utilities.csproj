@@ -11,6 +11,7 @@
     <Authors>Corey Sutton</Authors>
     <Product>CoreySutton.Utilities</Product>
     <Copyright>Copyright © 2018</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
