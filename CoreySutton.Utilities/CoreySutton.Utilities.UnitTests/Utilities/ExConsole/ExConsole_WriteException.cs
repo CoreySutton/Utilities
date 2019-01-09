@@ -34,15 +34,7 @@ namespace CoreySutton.Utilities.UnitTests
                     expected += $"ERROR: {exceptionMessage}{Environment.NewLine}";
                     expected += $"Site: {ex.TargetSite}{Environment.NewLine}";
                     expected += $"Depth: 1{Environment.NewLine}";
-
-                    expected += $"   at {nameof(CoreySutton)}" +
-                        $".{nameof(Utilities)}" +
-                        $".{nameof(UnitTests)}" +
-                        $".{nameof(ExConsole_WriteException)}" +
-                        $".{nameof(WriteException_DepthOne)}()" +
-                        $" in {path}" +
-                        @"Utilities\ExConsole\" + 
-                        $"{nameof(ExConsole_WriteException)}.cs:line 23";
+                    expected += ex.StackTrace;
 
                     Assert.AreEqual(expected, sw.ToString());
                 }
